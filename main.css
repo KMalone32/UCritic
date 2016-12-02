@@ -1,122 +1,104 @@
 :root {
-    --main: #999999;
-    --silver: rgba(153,153,153,0.2);
-    --empty: rgba(0,0,0,0);
-    --trans1: rgba(0,0,0,1.0);
-    --trans2: rgba(0,0,0,0.7);
-    --trans3: rgba(0,0,0,0.4);
+  --main: #999999;
+  --silver: rgba(153,153,153,0.2);
+  --empty: rgba(0,0,0,0);
+  --trans1: rgba(0,0,0,1.0);
+  --trans2: rgba(0,0,0,0.7);
+  --trans3: rgba(0,0,0,0.3);
 }
 
 body {
-    background-image: url(src/background1.jpg);
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
+  background: url(src/background1.jpg) center no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
 }
 
-#content {
-    margin: 0 auto;
-    width: 629px;
-    margin-top: 330px;
-    -webkit-transition: margin-top 0.7s linear;
-    transition: margin-top 0.7s;
+header {
+  padding: 30px 30px 10px 36px;
+  display: flex;
+  justify-content: space-between;
+  background: var(--silver);
+  border-bottom: solid 10px var(--main);
 }
 
-#content.act {
-    margin-top: 60px;
+header h1 {
+  color: var(--main);
+  font-size: 8rem;
+  font-family: Impact, Charcoal, sans-serif;
 }
 
-#logo {
-    color: var(--main);
-    position: relative;
-    font-size: 80px;
-    font-family: Impact, Charcoal, sans-serif;
+header h1 a {
+  text-decoration: none;
 }
 
-input[type="text"] {
-    width: 585px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative;
-    background-color: var(--silver);
-    border-bottom-color: var(--main);
-    border-bottom-width: 5px;
-    border-top: none 0px var(--empty);
-    border-left: none 0px var(--empty);
-    border-right: none 0px var(--empty);
-    color: var(--main);
+header h1 a:visited {
+  color: var(--main);
 }
 
-::-webkit-input-placeholder {
-    color: var(--main);
+#movie-input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-#noResult {
-    //height: 484px;
-    max-height: 0;
-    width: 625px;
-    color: var(--trans3);
-    background-color: var(--silver);
-    position: absolute;
-    margin-left: 2px;
-    margin-top: 2px;
-    max-width: 625px;
-    -webkit-transition: max-height 0.7s linear;
-    transition: max-height 0.7s;
+main input[type="text"] {
+  padding: 50px;
+  font-size: 2rem;
+  width: 100%;
+  border: none;
+  color: var(--main);
+  background: var(--trans3);
 }
 
-#noResult.act {
-    max-height: 484px;
+main input[type="text"]::-webkit-input-placeholder {
+  color: var(--silver);
 }
 
-#noResult h1 {
-    padding-top: 0px;
-    padding-bottom: 200px;
-    text-align: center;
-    -webkit-transition: padding 0.7s linear;
-    transition: padding 0.7s;
+main .movie-option-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
 }
 
-#noResult.act h1 {
-    padding-top: 200px;
+main .movie-option {
+  width: 100%;
+  padding: 15px 15px 0px 15px;
+  display: inline-block;
 }
 
-#response {
-    position: relative;
-    margin-left: -2px;
+main .movie-option img {
+  width: 18%;
+  display: inline-block;
 }
 
-#response table {
-    white-space: nowrap;
-    table-layout: fixed;
-    max-width: 629px;
+main .movie-option p {
+  font-size: 2rem;
+  display: inline-block;
+  height: 135px;
+  width: 79%;
+  padding: 55px 55px 55px 30px;
+  vertical-align: top;
+  background: var(--silver);
+  color: var(--main);
+  margin-left: 11px;
 }
 
-#response tr {
-    list-style: none;
-    line-height: 18.5px;
-    padding: 2px;
-    color: var(--main);
-    background-color: var(--silver);
+footer {
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+  bottom: 0;
+  background: var(--silver);
+  border-top: solid 10px var(--main);
 }
 
-#response tr:hover {
-    background-color: var(--main);
-    color: black;
-    cursor: pointer;
+footer .social-media {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
-#response td:nth-child(2) {
-    padding-left: 20px; 
-    width: 468px;
-}
-
-#response td:nth-child(3) {
-    padding: 20px;
-}
-
-#response table img {
-    width: 40px;
-    position: relative;
-    margin-top: 3px;
-    padding: 0px 3px 0px 3px;
+footer i img {
+  width: 8rem;
 }
