@@ -1,6 +1,6 @@
 :root {
   --main: #999999;
-  --silver: rgba(153,153,153,0.2);
+  --silver: rgba(153,153,153,0.4);
   --empty: rgba(0,0,0,0);
   --trans1: rgba(0,0,0,1.0);
   --trans2: rgba(0,0,0,0.7);
@@ -8,22 +8,21 @@
 }
 
 body {
-  background: url(src/background1.jpg) center no-repeat;
+  background: white;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
 }
 
 header {
-  padding: 30px 30px 10px 36px;
+  padding: 30px 30px 10px 20px;
   display: flex;
   justify-content: space-between;
-  background: var(--silver);
-  border-bottom: solid 10px var(--main);
+  background: var(--main);
+  border-bottom: solid 3px black;
 }
 
 header h1 {
-  color: var(--main);
-  font-size: 8rem;
+  color: white;
+  font-size: 4.5rem;
   font-family: Impact, Charcoal, sans-serif;
 }
 
@@ -32,7 +31,7 @@ header h1 a {
 }
 
 header h1 a:visited {
-  color: var(--main);
+  color: white;
 }
 
 #movie-input {
@@ -43,16 +42,21 @@ header h1 a:visited {
 }
 
 main input[type="text"] {
-  padding: 50px;
-  font-size: 2rem;
+  padding: 30px;
+  font-size: 1rem;
   width: 100%;
+  margin: 20px;
   border: none;
   color: var(--main);
-  background: var(--trans3);
+  background: #d3d3d3;
+}
+
+main input[type="text"]:focus {
+  outline: none;
 }
 
 main input[type="text"]::-webkit-input-placeholder {
-  color: var(--silver);
+  color: var(--main);
 }
 
 main .movie-option-container {
@@ -63,42 +67,39 @@ main .movie-option-container {
 
 main .movie-option {
   width: 100%;
-  padding: 15px 15px 0px 15px;
+  height: 30px;
   display: inline-block;
+  padding: 0px 20px 20px 20px;
 }
 
 main .movie-option img {
-  width: 18%;
-  display: inline-block;
-}
-
-main .movie-option p {
-  font-size: 2rem;
-  display: inline-block;
-  height: 135px;
-  width: 79%;
-  padding: 55px 55px 55px 30px;
-  vertical-align: top;
-  background: var(--silver);
-  color: var(--main);
-  margin-left: 11px;
+  width: 100%;
+  margin-bottom: 120px;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  padding: 30px;
   bottom: 0;
-  background: var(--silver);
-  border-top: solid 10px var(--main);
+  background: #d3d3d3;
+  border-top: solid 3px black;
 }
 
 footer .social-media {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  padding: 1rem;
+}
+
+footer .social-media .social-media-item {
+  width: 4rem;
+}
+
+footer .social-media a svg {
+  width: 4rem;
 }
 
 footer i img {
-  width: 8rem;
+  width: 4rem;
 }
