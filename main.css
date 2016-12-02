@@ -1,0 +1,122 @@
+:root {
+    --main: #999999;
+    --silver: rgba(153,153,153,0.2);
+    --empty: rgba(0,0,0,0);
+    --trans1: rgba(0,0,0,1.0);
+    --trans2: rgba(0,0,0,0.7);
+    --trans3: rgba(0,0,0,0.4);
+}
+
+body {
+    background-image: url(src/background1.jpg);
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    margin: 0 auto;
+    width: 629px;
+    margin-top: 330px;
+    -webkit-transition: margin-top 0.7s linear;
+    transition: margin-top 0.7s;
+}
+
+#content.act {
+    margin-top: 60px;
+}
+
+#logo {
+    color: var(--main);
+    position: relative;
+    font-size: 80px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+input[type="text"] {
+    width: 585px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    background-color: var(--silver);
+    border-bottom-color: var(--main);
+    border-bottom-width: 5px;
+    border-top: none 0px var(--empty);
+    border-left: none 0px var(--empty);
+    border-right: none 0px var(--empty);
+    color: var(--main);
+}
+
+::-webkit-input-placeholder {
+    color: var(--main);
+}
+
+#noResult {
+    //height: 484px;
+    max-height: 0;
+    width: 625px;
+    color: var(--trans3);
+    background-color: var(--silver);
+    position: absolute;
+    margin-left: 2px;
+    margin-top: 2px;
+    max-width: 625px;
+    -webkit-transition: max-height 0.7s linear;
+    transition: max-height 0.7s;
+}
+
+#noResult.act {
+    max-height: 484px;
+}
+
+#noResult h1 {
+    padding-top: 0px;
+    padding-bottom: 200px;
+    text-align: center;
+    -webkit-transition: padding 0.7s linear;
+    transition: padding 0.7s;
+}
+
+#noResult.act h1 {
+    padding-top: 200px;
+}
+
+#response {
+    position: relative;
+    margin-left: -2px;
+}
+
+#response table {
+    white-space: nowrap;
+    table-layout: fixed;
+    max-width: 629px;
+}
+
+#response tr {
+    list-style: none;
+    line-height: 18.5px;
+    padding: 2px;
+    color: var(--main);
+    background-color: var(--silver);
+}
+
+#response tr:hover {
+    background-color: var(--main);
+    color: black;
+    cursor: pointer;
+}
+
+#response td:nth-child(2) {
+    padding-left: 20px; 
+    width: 468px;
+}
+
+#response td:nth-child(3) {
+    padding: 20px;
+}
+
+#response table img {
+    width: 40px;
+    position: relative;
+    margin-top: 3px;
+    padding: 0px 3px 0px 3px;
+}
