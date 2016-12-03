@@ -63,6 +63,7 @@ main .movie-option-container {
   display: flex;
   flex-direction: column;
   align-content: space-around;
+  margin-bottom: 100px;
 }
 
 main .movie-option {
@@ -74,7 +75,8 @@ main .movie-option {
 
 main .movie-option img {
   width: 100%;
-  margin-bottom: 120px;
+  padding-bottom: 20px;
+  max-width: 300px;
 }
 
 footer {
@@ -100,6 +102,23 @@ footer .social-media a svg {
   width: 4rem;
 }
 
+footer #twitter-a:hover > #twitter-b {
+    fill: #1da1f2;
+}
+
+footer #facebook-a:hover > #facebook-b {
+  fill: #3b5998;
+}
+
 footer i img {
   width: 4rem;
+}
+
+@media(min-width: 357px) {
+  main .movie-option-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+  }
 }
