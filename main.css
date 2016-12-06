@@ -34,6 +34,16 @@ header h1 a:visited {
   color: white;
 }
 
+header .ham-menu-nav i img {
+  width: 4rem;
+  margin-right: -20px;
+  visibility: hidden;
+}
+
+header .ham-menu-nav i img:hover {
+  cursor: pointer;
+}
+
 #movie-input {
   position: relative;
   width: 100%;
@@ -104,11 +114,19 @@ footer .social-media a svg {
 }
 
 footer #twitter-a:hover > #twitter-b {
-    fill: #1da1f2;
+    fill: #1d7cb6;
 }
 
 footer #facebook-a:hover > #facebook-b {
-  fill: #3b5998;
+  fill: #273b66;
+}
+
+footer .li {
+  display: none;
+}
+
+footer #linkedin-a:hover > #linkedin-b {
+  fill: #146288;
 }
 
 footer i img {
@@ -149,9 +167,14 @@ footer i img {
     width: 16.666666%;
   }
 }
-/*
-@media(min-width: 358px) {
-  main .movie-option {
-    width: 100%;
+@media(min-width: 500px) {
+  .ham-menu {
+    display: none;
   }
-}*/
+  header .ham-menu-nav i img {
+    visibility: visible;
+  }
+  footer .li {
+    display: flex;
+  }
+}
