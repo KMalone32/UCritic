@@ -78,6 +78,15 @@ main .movie-option-container {
   padding: 0px 20px 0px 0px;
 }
 
+main .movie-option-container h2 {
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+  padding-left: 20px;
+  color: var(--silver);
+}
+
 main .movie-option {
   width: 100%;
   overflow: hidden;

@@ -1,31 +1,38 @@
 var movies = {};
+var searchTimeout;
 
 $(document).ready(function(e) {
 
     $("#target").keyup(function() {
-        var search = $("#target").val();
-        var HTML = "";
-        var url = 'http://www.omdbapi.com/?s=*' + search + '*&type=movie';
-        $.ajax({
-            type: 'GET',
-            dataType: 'json',
-            url: url,
-            success: function (a) {
-                var len = 0;
-                if (a.Response != "False") {
-                    if (a.Search.length > 6) { len = 6; }
-                    else { len = a.Search.length; }
-                    for (var i = 0; i < len; i++) {
-                        HTML += "<div class=\"movie-option\">";
-                        HTML += "<a href=\"movie/index.html\">";
-                        HTML += "<img src=\"" + a.Search[i].Poster + "\">";
-                        HTML += "</a></div>";
-                    }
-                }
-                $(".movie-option-container").html(HTML);
-            }
-        })
-
+        $(".movie-option-container").html("<h2>Searching...</h2>");
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(function () {
+          var search = $("#target").val();
+          var HTML = "";
+          var url = 'http://www.omdbapi.com/?s=*' + search + '*&type=movie';
+          $.ajax({
+              type: 'GET',
+              dataType: 'json',
+              url: url,
+              success: function (a) {
+                  var len = 0;
+                  if (a.Response != "False") {
+                      if (a.Search.length > 6) { len = 6; }
+                      else { len = a.Search.length; }
+                      if (len === 0) { HTML += "<h2>No Results</h2>"; }
+                      for (var i = 0; i < len; i++) {
+                          if (a.Search[i].Poster != "N/A") {
+                            HTML += "<div class=\"movie-option\">";
+                            HTML += "<a href=\"movie/index.html\">";
+                            HTML += "<img src=\"" + a.Search[i].Poster + "\">";
+                            HTML += "</a></div>";
+                          }
+                      }
+                  } else { HTML += "<h2>No Results</h2>"; }
+                  $(".movie-option-container").html(HTML);
+              }
+          })
+        }, 200);
     });
 
 });
