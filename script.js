@@ -17,12 +17,13 @@ $(document).ready(function(e) {
               success: function (a) {
                   var len = 0;
                   if (a.Response != "False") {
-                      if (a.Search.length > 6) { len = 6; }
+                      if (a.Search.length > 10) { len = 10; }
                       else { len = a.Search.length; }
                       if (len === 0) { HTML += "<h2>No Results</h2>"; }
                       for (var i = 0; i < len; i++) {
                           if (a.Search[i].Poster != "N/A") {
                             HTML += "<div class=\"movie-option\">";
+                            HTML += "<p>" + a.Search[i].Title + " <br><br> " + a.Search[i].Year + "</p>";
                             HTML += "<a href=\"movie/index.html\">";
                             HTML += "<img src=\"" + a.Search[i].Poster + "\">";
                             HTML += "</a></div>";
@@ -34,6 +35,10 @@ $(document).ready(function(e) {
           })
         }, 200);
     });
+
+    $("img").onclick = function() {
+      alert($(this));
+    }; 
 
 });
 
@@ -55,13 +60,3 @@ $(document).on({
         })
     }
 }, "#x");
-
-$(document).on({
-    click: function () {
-        $("#content").addClass('act');
-        $("#noResult").addClass('act');
-        setTimeout(function() {
-            $("#noResult h1")[0].innerText = "no search results";
-        }, 100);
-    }
-}, "#target");
