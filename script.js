@@ -22,10 +22,11 @@ $(document).ready(function(e) {
                       if (len === 0) { HTML += "<h2>No Results</h2>"; }
                       for (var i = 0; i < len; i++) {
                           if (a.Search[i].Poster != "N/A") {
+                            movies[a.Search[i].Title.substring(0,64)] = a.Search[i];
                             HTML += "<div class=\"movie-option\">";
                             HTML += "<p>" + a.Search[i].Title + " <br><br> " + a.Search[i].Year + "</p>";
                             HTML += "<a href=\"movie/index.html\">";
-                            HTML += "<img src=\"" + a.Search[i].Poster + "\">";
+                            HTML += "<img id=\"x\" src=\"" + a.Search[i].Poster + "\">";
                             HTML += "</a></div>";
                           }
                       }
@@ -36,15 +37,13 @@ $(document).ready(function(e) {
         }, 200);
     });
 
-    $("img").onclick = function() {
-      alert($(this));
-    }; 
-
 });
 
 $(document).on({
     click: function () {
-        var title = $(this)[0].childNodes[1].innerText;
+        var titleArr = $(this).parent()["0"].innerText.split(" ");
+        titleArr.pop();
+        var title = titleArr.join(" ");
         var search = movies[title].Title;
         var url = 'http://www.omdbapi.com/?t=' + search + '&type=movie&tomatoes=true';
         $.ajax({
@@ -55,7 +54,6 @@ $(document).on({
                 var movie = JSON.stringify(a);
                 movie = btoa(movie);
                 localStorage.setItem('_movie', movie);
-                window.location = 'movie/index.html'
             }
         })
     }
