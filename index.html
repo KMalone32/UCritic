@@ -14,62 +14,117 @@
     <body>
         <header>
           <h1><a href="index.html"><span id="U">U</span>Critic</a></h1>
-          <div class="ham-menu-nav"><i><img src="src/ham-menu1.png"></i></div>
+          <div class="ham-menu-nav" id="ham"><i><img src="src/ham-menu1.png"></i></div>
+          <div class="inner-ham-menu">
+            <ul>
+              <li><a href="">Theater</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Profile</a></li>
+            </ul>
+          </div>
         </header>
         <main role="main">
           <form id="movie-input">
             <input id="target" autocomplete="off" type="text" placeholder="Search for a movie or TV show">
           </form>
-          <div class="movie-option-container">
-            <h2>Search Results</h2>
-            <!--<div class="movie-option">
-              <a href="movie/index.html"><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"></a>
+          <div class="movie-option-container" id="movie-result">
+            <div class="movie-search">
+              <h2>Search Results</h2>
             </div>
-            <div class="movie-option">
-              <a href="movie/index.html"><img src="https://s-media-cache-ak0.pinimg.com/originals/fd/5e/66/fd5e662dce1a3a8cd192a5952fa64f02.jpg"></a>
+            <div class="movie-stats">
+              <img id="movie-poster" src="">
+              <section class="graph">
+                <div class="bar" id="inspiring-bar">
+                  <p class="title">Inspiring</p>
+                  <span class="rating">70%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="re-watchability-bar">
+                  <p class="title">Re-Watchability</p>
+                  <span class="rating">86%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="scary-bar">
+                  <p class="title">Scary</p>
+                  <span class="rating">10%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="thinker-bar">
+                  <p class="title">Thinker</p>
+                  <span class="rating">95%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="comedic-bar">
+                  <p class="title">Comedic</p>
+                  <span class="rating">22%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="romantic-bar">
+                  <p class="title">Romantic</p>
+                  <span class="rating">55%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="gory-bar">
+                  <p class="title">Gory</p>
+                  <span class="rating">99%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+                <div class="bar" id="intense-bar">
+                  <p class="title">Intense</p>
+                  <span class="rating">83%</span>
+                  <div class="left-over"></div>
+                  <div class="graph-bar"></div>
+                </div>
+              </section>
             </div>
-            <div class="movie-option">
-              <a href="movie/index.html"><img src="http://cdn.mos.cms.futurecdn.net/15399e7a7b11a8c2ef28511107c90c6f.jpg"></a>
-            </div>
-            <div class="movie-option">
-              <a href="movie/index.html"><img src="http://www.freedesign4.me/wp-content/gallery/posters/free-movie-film-poster-harry-potter-phoenix.jpg"></a>
-            </div>
-            <div class="movie-option">
-              <a href="movie/index.html"><img src="http://www.thefashionisto.com/wp-content/uploads/2015/11/Star-Wars-The-Force-Awakens-Movie-Poster-800x1186.jpg"></a>
-            </div>
-            <div class="movie-option">
-              <a href="movie/index.html"><img src="http://photos1.blogger.com/x/blogger/4718/1605/1600/392061/poster%20nacho.jpg"></a>
-            </div>-->
+            <section class="movie-info" id="synopsis"></section>
           </div>
         </main>
         <footer>
+          <section class="inner-ham">
+            <ul>
+              <li><a href="">Theater</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Profile</a></li>
+            </ul>
+          </section>
           <div class="social-media">
-            <div class="social-media-item tw"><a href="https://twitter.com/">
+            <div class="tw"><a href="https://twitter.com/">
               <svg id="twitter-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
   							<circle id="twitter-b" fill="#1da1f2" cx="50" cy="50" r="50"></circle>
   							<path fill="#fff" d="M71.3,39.4c-1.6,0.7-3.3,1.2-5,1.4c1.8-1.1,3.2-2.8,3.8-4.8c-1.7,1-3.6,1.7-5.6,2.1c-1.6-1.7-3.9-2.8-6.4-2.8 c-4.8,0-8.8,3.9-8.8,8.8c0,0.7,0.1,1.4,0.2,2c-7.3-0.4-13.7-3.9-18-9.1c-0.8,1.3-1.2,2.8-1.2,4.4c0,3,1.5,5.7,3.9,7.3 c-1.4,0-2.8-0.4-4-1.1c0,0,0,0.1,0,0.1c0,4.2,3,7.8,7,8.6c-0.7,0.2-1.5,0.3-2.3,0.3c-0.6,0-1.1-0.1-1.6-0.2c1.1,3.5,4.3,6,8.2,6.1 c-3,2.3-6.8,3.7-10.9,3.7c-0.7,0-1.4,0-2.1-0.1c3.9,2.5,8.5,3.9,13.4,3.9C58.2,70,67,56.7,67,45.1c0-0.4,0-0.8,0-1.1 C68.7,42.7,70.2,41.2,71.3,39.4L71.3,39.4z"></path>
   						</svg>
             </a></div>
-            <div class="social-media-item fb"><a href="https://www.facebook.com/">
+            <div class="fb"><a href="https://www.facebook.com/">
               <svg id="facebook-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
   							<circle id="facebook-b" fill="#3b5998" cx="50" cy="50" r="50"></circle>
   							<path fill="#fff" d="M53.3,71.3V51.9h6.5l1-7.6h-7.5v-4.8c0-2.2,0.6-3.7,3.8-3.7l4,0V29c-0.7-0.1-3.1-0.3-5.9-0.3 c-5.8,0-9.8,3.5-9.8,10v5.6h-6.5v7.6h6.5v19.5H53.3z"></path>
   						</svg>
             </a></div>
-            <div class="social-media-item li"><a href="https://linkedin.com">
+            <div class="li"><a href="https://linkedin.com">
               <svg id="linkedin-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
   							<circle id="linkedin-b" fill="#1c87bc" cx="50" cy="50" r="50"></circle>
   							<path fill="#fff" d="M39.1,69.1V43.3h-8.6v25.8H39.1z M34.8,39.8c3,0,4.9-2,4.9-4.5c-0.1-2.5-1.9-4.5-4.8-4.5 c-2.9,0-4.9,1.9-4.9,4.5C30,37.8,31.9,39.8,34.8,39.8L34.8,39.8L34.8,39.8z M43.8,69.1h8.6V54.7c0-0.8,0.1-1.5,0.3-2.1 c0.6-1.5,2-3.1,4.4-3.1c3.1,0,4.3,2.4,4.3,5.8v13.8H70V54.3c0-7.9-4.2-11.6-9.9-11.6c-4.6,0-6.7,2.6-7.8,4.3h0.1v-3.7h-8.6 C43.9,45.7,43.8,69.1,43.8,69.1L43.8,69.1z"></path>
   						</svg>
             </a></div>
-            <div class="social-media-item ham-menu"><a href="">
+            <div class="ham-menu">
               <svg id="ham-menu-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
                 <circle id="ham-menu-b" fill="#152649" cx="50" cy="50" r="50"></circle>
-                <img id="menu-size" src="src/ham-menu1.png">
+                <div class="ham-lines" id="ham">
+                  <div class="ham-line"></div>
+                  <div class="ham-line"></div>
+                  <div class="ham-line"></div>
+                </div>
               </svg>
-            </a></div>
-            <!--<div class="social-media-item ham-menu"><i><img src="src/ham-menu.png"></i></div>-->
-          </div>
+            </div>
         </footer>
+        </div>
     </body>
 </html>

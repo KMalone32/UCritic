@@ -1,13 +1,8 @@
 window.onload = function loadData() {
-    var movie = localStorage.getItem('_movie');
+    var movie = localStorage['_movie'];
     if (!movie) { return false; }
-    localStorage.removeItem('_movie');
-    movie = atob(movie);
     movie = JSON.parse(movie);
     fillFields(movie);
-    movie = JSON.stringify(movie);
-    movie = btoa(movie);
-    localStorage.setItem('_movie', movie);
 }
 
 function fillFields(movie) {
