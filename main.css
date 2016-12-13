@@ -31,6 +31,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.box {
+  height: 1000px;
+  width: 10px;
+}
+
 /* ===================================================*/
 /* HEADER ============================================*/
 /* ===================================================*/
@@ -40,6 +45,7 @@ header {
   display: flex;
   justify-content: space-between;
   background: var(--main);
+  box-shadow: 0px 62px 43px -47px black;
 }
 
 header .banner-corner {
@@ -55,12 +61,14 @@ header .banner-corner {
   transform: rotate(147deg);
   margin-top: 77px;
   margin-left: -12px;
+  z-index: -1;
 }
 
 #right-banner-corner {
   transform: rotate(213deg);
   margin-top: 77px;
   margin-left: 914px;
+  z-index: -1;
 }
 
 /* LOGO */
@@ -134,6 +142,7 @@ main #movie-input {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-top: 140px;
 }
 
 main input[type="text"] {
@@ -304,7 +313,7 @@ main .movie-info {
   background: var(--main);
   text-align: justify;
   text-justify: inter-word;
-  padding: 20px 20px 20px 20px;
+  padding: 30px;
   margin-left: 20px;
   color: white;
   margin-bottom: 20px;
@@ -529,9 +538,13 @@ footer .ham-line {
   }
   header {
     margin-top: 20px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1;
   }
   footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     left: 0;
     margin-bottom: 20px;
