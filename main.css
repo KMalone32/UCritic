@@ -1,10 +1,11 @@
 :root {
-  --main: #999999;
-  --midnight: #152649;
-  --light-gray: #d3d3d3;
-  --twitter-dark: #1d7cb6;
-  --facebook-dark: #273b66;
-  --linkedin-dark: #146288;
+  --main: #33363b;
+  --ucritic: #E8AA00;
+  --light-gray: #33363b;
+  --dark-gray: #131417;
+  --twitter-dark: #1da1f2;
+  --facebook-dark: #3b5998;
+  --linkedin-dark: #1c87bc;
   --ham-menu-dark: #070f20;
   --silver: rgba(153,153,153,0.4);
   --trans1: rgba(0,0,0,1.0);
@@ -26,7 +27,7 @@
 /* ===================================================*/
 
 body {
-  background: white;
+  background: var(--dark-gray);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -41,13 +42,35 @@ header {
   background: var(--main);
 }
 
+header .banner-corner {
+  width: 0;
+  z-index: -1;
+  position: absolute;
+  border-bottom: 46px solid #1d1f22;
+  border-left: 29px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+#left-banner-corner {
+  transform: rotate(147deg);
+  margin-top: 77px;
+  margin-left: -12px;
+}
+
+#right-banner-corner {
+  transform: rotate(213deg);
+  margin-top: 77px;
+  margin-left: 914px;
+}
+
 /* LOGO */
 
 #U {
-  color: var(--midnight);
+  color: var(--ucritic);
 }
 
 header h1 {
+  margin-left: 45px;
   color: white;
   font-size: 4.5rem;
   font-family: Impact, Charcoal, sans-serif;
@@ -79,7 +102,7 @@ header .ham-menu-nav i img:hover {
 header .inner-ham-menu ul {
   display: flex;
   justify-content: space-between;
-  margin-right: -30px;
+  margin-right: 10px;
 }
 
 header .inner-ham-menu ul li {
@@ -116,10 +139,10 @@ main #movie-input {
 main input[type="text"] {
   padding: 30px;
   font-size: 1rem;
-  width: 100%;
+  width: 80%;
   margin: 20px;
   border: none;
-  color: var(--main);
+  color: var(--ucritic);
   background: var(--light-gray);
 }
 
@@ -128,13 +151,14 @@ main input[type="text"]:focus {
 }
 
 main input[type="text"]::-webkit-input-placeholder {
-  color: var(--main);
+  color: var(--ucritic);
 }
 
 /* MOVIE POSTERS */
 
 main .movie-option-container {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-content: space-around;
@@ -148,11 +172,11 @@ main .movie-option-container .movie-search {
 
 main .movie-option-container h2 {
   font-size: 2rem;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   text-align: center;
   padding-top: 150px;
   padding-bottom: 150px;
-  padding-left: 20px;
   color: var(--silver);
 }
 
@@ -197,7 +221,6 @@ main .movie-stats {
 main .movie-stats img {
   height: 245px;
   margin: 0px 0px 20px 20px;
-  border: solid 5px var(--trans2);
 }
 
 main .graph {
@@ -281,7 +304,6 @@ main .movie-info {
   background: var(--main);
   text-align: justify;
   text-justify: inter-word;
-  border: solid 5px var(--trans2);
   padding: 20px 20px 20px 20px;
   margin-left: 20px;
   color: white;
@@ -316,20 +338,13 @@ footer .social-media svg {
   width: 4rem;
 }
 
-footer #twitter-a:hover > #twitter-b {
-  fill: var(--twitter-dark);
-}
-
-footer #facebook-a:hover > #facebook-b {
-  fill: var(--facebook-dark);
+footer #sm-a:hover > #sm-b {
+  stroke: var(--ucritic);
+  stroke-width: 2;
 }
 
 footer .li {
   display: none;
-}
-
-footer #linkedin-a:hover > #linkedin-b {
-  fill: var(--linkedin-dark);
 }
 
 footer #ham-lines:hover < #ham-menu-b {
@@ -363,7 +378,7 @@ footer .ham-line {
   max-width: 1000px;
   width: 100%;
   position: relative;
-  background: var(--midnight);
+  background: var(--ucritic);
   color: white;
   text-align: center;
   margin-bottom: -252px;
@@ -378,7 +393,6 @@ footer .ham-line {
   width: 100%;
   display: flex;
   flex-direction: column;
-  //align-content: center;
   align-content: space-around;
 }
 
@@ -517,10 +531,17 @@ footer .ham-line {
     margin-top: 20px;
   }
   footer {
-    position: relative;
+    position: absolute;
+    right: 0;
+    left: 0;
     margin-bottom: 20px;
   }
   main .movie-option-container {
     margin-bottom: 0px;
+  }
+}
+@media(max-width: 1000px) {
+  #left-banner-corner, #right-banner-corner {
+    display: none;
   }
 }
