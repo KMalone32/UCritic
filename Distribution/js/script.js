@@ -188,6 +188,27 @@ angular.module("ucritic", ["ui.router"]).config(function ($stateProvider, $urlRo
 "use strict";
 "use strict";
 
+angular.module("ucritic").directive("movieDisplay", function () {
+  return {
+    restrict: 'E',
+    templateUrl: 'Production/v_home/movie.html',
+    link: function link(scope, element, attributes) {
+      element.on("click", function () {
+        alert("here");
+      });
+    },
+    controller: function controller($scope, homeSvc) {
+      $scope.getListMovies = function () {
+        $scope.listMovies = homeSvc.getListMovies();
+      };
+      $scope.getMovie = function () {
+        $scope.movies = homeSvc.getMovies();
+      };
+    }
+  };
+});
+"use strict";
+
 angular.module("ucritic").controller("blogCtrl", function ($scope) {});
 "use strict";
 
@@ -206,6 +227,7 @@ angular.module("ucritic").controller("homeCtrl", function ($scope, homeSvc) {
 angular.module("ucritic").service("homeSvc", function ($http, $q) {
 
   var currentMovie;
+  var listMovies = [];
 
   this.getMovies = function (movie) {
     var defer = $q.defer();
@@ -214,13 +236,12 @@ angular.module("ucritic").service("homeSvc", function ($http, $q) {
       url: 'http://www.omdbapi.com/?s=*' + movie + '*&type=movie'
     }).then(function (omdbapi) {
       var movies = omdbapi.data.Search;
-      var nMovies = [];
       for (var i = 0; i < movies.length; i++) {
         if (movies[i].Poster != "N/A") {
-          nMovies.push(movies[i]);
+          listMovies.push(movies[i]);
         }
       }
-      defer.resolve(nMovies);
+      defer.resolve(listMovies);
     });
     return defer.promise;
   };
@@ -230,14 +251,12 @@ angular.module("ucritic").service("homeSvc", function ($http, $q) {
   };
 
   this.getMovie = function () {
-    console.log(currentMovie);
     return currentMovie;
   };
-});
-"use strict";
 
-angular.module("ucritic").controller("movieCtrl", function ($scope, homeSvc) {
-  $scope.currentMovie = homeSvc.getMovie();
+  this.getListMovies = function () {
+    return listMovies;
+  };
 });
 "use strict";
 

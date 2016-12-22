@@ -1,0 +1,4 @@
+<div class="movie-option" ng-repeat="movie in movies">
+  <p> {{movie.Title}} <br><br> {{movie.Year}} </p>
+  <img ng-click="saveMovie(movie)" ui-sref="movie" ng-src="{{movie.Poster}}">
+</div>

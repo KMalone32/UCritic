@@ -4,10 +4,11 @@
   </form>
   <div class="movie-option-container" id="movie-result">
     <div class="movie-search">
-      <div class="movie-option" ng-repeat="movie in movies">
+      <movie-display></movie-display>
+      <!-- <div class="movie-option" ng-repeat="movie in movies">
         <p> {{movie.Title}} <br><br> {{movie.Year}} </p>
         <img ng-click="saveMovie(movie)" ui-sref="movie" ng-src="{{movie.Poster}}">
-      </div>
+      </div> -->
     </div>
     <div class="movie-stats">
       <img id="movie-poster" src="">
