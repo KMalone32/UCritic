@@ -22,11 +22,6 @@ angular.module("ucritic", ["ui.router"]).config(function ($stateProvider, $urlRo
     templateUrl: 'Production/v_theater/theater.html',
     url: '/theater',
     controller: 'theaterCtrl'
-  })
-  .state('movie', {
-    templateUrl: 'Production/v_movie/movie.html',
-    url: '/movie',
-    controller: 'movieCtrl'
   });
 
 });

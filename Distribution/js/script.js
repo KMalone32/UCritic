@@ -20,10 +20,6 @@ angular.module("ucritic", ["ui.router"]).config(function ($stateProvider, $urlRo
     templateUrl: 'Production/v_theater/theater.html',
     url: '/theater',
     controller: 'theaterCtrl'
-  }).state('movie', {
-    templateUrl: 'Production/v_movie/movie.html',
-    url: '/movie',
-    controller: 'movieCtrl'
   });
 });
 // var movies = {};
@@ -191,10 +187,11 @@ angular.module("ucritic", ["ui.router"]).config(function ($stateProvider, $urlRo
 angular.module("ucritic").directive("movieDisplay", function () {
   return {
     restrict: 'E',
-    templateUrl: 'Production/v_home/movie.html',
+    template: '<div ng-include="contentUrl"></div>',
     link: function link(scope, element, attributes) {
+      scope.contentUrl = 'Production/v_home/movie.html';
       element.on("click", function () {
-        alert("here");
+        scope.contentUrl = 'Production/v_home/movieInfo.html';
       });
     },
     controller: function controller($scope, homeSvc) {

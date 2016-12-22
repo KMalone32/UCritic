@@ -1,11 +1,12 @@
 angular.module("ucritic").directive("movieDisplay", function() {
   return {
     restrict: 'E',
-    templateUrl: 'Production/v_home/movie.html',
+    template: '<div ng-include="contentUrl"></div>',
     link: function(scope, element, attributes) {
+      scope.contentUrl = 'Production/v_home/movie.html';
       element.on("click", function() {
-        alert("here");
-      })
+         scope.contentUrl = 'Production/v_home/movieInfo.html';
+      });
     },
     controller: function($scope, homeSvc) {
       $scope.getListMovies = function() {
