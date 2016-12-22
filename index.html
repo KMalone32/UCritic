@@ -5,12 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="reset.css">
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <link rel="stylesheet" type="text/css" href="v_blog/blogStyle.css">
-        <link rel="stylesheet" type="text/css" href="v_home/homeStyle.css">
-        <link rel="stylesheet" type="text/css" href="v_profile/profileStyle.css">
-        <link rel="stylesheet" type="text/css" href="v_theater/theaterStyle.css">
-        <link rel="stylesheet" type="text/css" href="mediaQueries.css">
+        <link rel="stylesheet" type="text/css" href="Distribution/css/main.css">
         <link rel="icon" href="src/logo.png">
         <title>UCritic</title>
     </head>
@@ -29,7 +24,7 @@
 
         <header>
           <h1><a ui-sref="home"><span id="U">U</span>Critic</a></h1>
-          <div class="ham-menu" ng-click="showElement()">
+          <div class="ham-menu" ng-click="modal = !modal">
             <div class="ham-lines" id="ham">
               <div class="ham-line"></div>
               <div class="ham-line"></div>
@@ -47,14 +42,15 @@
 
         <section class="modal-menu" ng-show="modal">
           <ul>
-            <li id="li-a" ui-sref="theater"><a id="a-b">Theater</a></li>
-            <li id="li-a" ui-sref="blog"><a id="a-b">Blog</a></li>
-            <li id="li-a" ui-sref="profile"><a id="a-b">Profile</a></li>
+            <li ng-click="modal = !modal" id="li-a" ui-sref="theater"><a id="a-b">Theater</a></li>
+            <li ng-click="modal = !modal" id="li-a" ui-sref="blog"><a id="a-b">Blog</a></li>
+            <li ng-click="modal = !modal" id="li-a" ui-sref="profile"><a id="a-b">Profile</a></li>
           </ul>
         </section>
 
         <ui-view></ui-view>
 
+        <div class="footer-back"></div>
         <footer>
 
           <section class="social-media">
@@ -86,12 +82,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
-        <script src="app.js"></script>
-        <script src="v_blog/blogCtrl.js"></script>
-        <script src="v_home/homeCtrl.js"></script>
-        <script src="v_profile/profileCtrl.js"></script>
-        <script src="v_theater/theaterCtrl.js"></script>
-        <script src="directives/showElement.js"></script>
+        <script src="Distribution/js/script.js"></script>
 
     </body>
 

@@ -1,0 +1,67 @@
+<main role="main">
+  <form id="movie-input">
+    <input ng-model="movie" ng-change="searchMovie(movie)" id="target" autocomplete="off" type="text" placeholder="Search for a movie or TV show">
+  </form>
+  <div class="movie-option-container" id="movie-result">
+    <div class="movie-search">
+      <div class="movie-option" ng-repeat="movie in movies">
+        <p> {{movie.Title}} <br><br> {{movie.Year}} </p>
+        <img ng-click="saveMovie(movie)" ui-sref="movie" ng-src="{{movie.Poster}}">
+      </div>
+    </div>
+    <div class="movie-stats">
+      <img id="movie-poster" src="">
+      <section class="graph">
+        <div class="bar" id="inspiring-bar">
+          <p class="title">Inspiring</p>
+          <span class="rating">70%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="re-watchability-bar">
+          <p class="title">Re-Watchability</p>
+          <span class="rating">86%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="scary-bar">
+          <p class="title">Scary</p>
+          <span class="rating">10%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="thinker-bar">
+          <p class="title">Thinker</p>
+          <span class="rating">95%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="comedic-bar">
+          <p class="title">Comedic</p>
+          <span class="rating">22%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="romantic-bar">
+          <p class="title">Romantic</p>
+          <span class="rating">55%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="gory-bar">
+          <p class="title">Gory</p>
+          <span class="rating">99%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="intense-bar">
+          <p class="title">Intense</p>
+          <span class="rating">83%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+      </section>
+    </div>
+    <section class="movie-info" id="synopsis"></section>
+  </div>
+</main>
