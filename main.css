@@ -175,7 +175,6 @@ header .inner-ham-menu ul li a:visited {
   position: absolute;
   z-index: 1;
   right: 0;
-  display: none;
 }
 
 .modal-menu ul {
