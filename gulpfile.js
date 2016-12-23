@@ -19,7 +19,7 @@ gulp.task('build-css', function() {
 });
 
 gulp.task('build-js', [], function() {
-  return gulp.src('./Production/**/*.js')
+  return gulp.src('./Production/main/app.js','./Production/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(print())
     .pipe(babel({ presets: ['es2015'] }))
