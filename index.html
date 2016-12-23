@@ -5,7 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="reset.css">
-        <link rel="stylesheet" type="text/css" href="Distribution/css/main.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="v_blog/blogStyle.css">
+        <link rel="stylesheet" type="text/css" href="v_home/homeStyle.css">
+        <link rel="stylesheet" type="text/css" href="v_profile/profileStyle.css">
+        <link rel="stylesheet" type="text/css" href="v_theater/theaterStyle.css">
         <link rel="icon" href="src/logo.png">
         <title>UCritic</title>
     </head>
@@ -48,6 +52,12 @@
           </ul>
         </section>
 
+        <main ng-controller="mainCtrl">
+          <form id="movie-input">
+            <input ng-model="movie" ng-change="searchMovie(movie)" id="target" autocomplete="off" type="text" placeholder="Search for a movie or TV show">
+          </form>
+        </main>
+
         <ui-view></ui-view>
 
         <div class="footer-back"></div>
@@ -82,7 +92,14 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
-        <script src="Distribution/js/script.js"></script>
+        <script src="app.js"></script>
+        <script src="mainCtrl.js"></script>
+        <script src="v_blog/blogCtrl.js"></script>
+        <script src="v_home/homeCtrl.js"></script>
+        <script src="v_profile/profileCtrl.js"></script>
+        <script src="v_theater/theaterCtrl.js"></script>
+        <script src="v_home/homeSvc.js"></script>
+        <!-- <script src="directives/viewMovie.js"></script> -->
 
     </body>
 
