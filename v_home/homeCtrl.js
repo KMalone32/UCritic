@@ -1,10 +1,7 @@
 angular.module("ucritic").controller("homeCtrl", function($scope, homeSvc) {
   $scope.service = homeSvc;
   $scope.viewMovie = true;
-  $scope.saveMovie = function(movie) {
-    console.log(movie);
-    homeSvc.saveMovie(movie);
-  }
+  $scope.viewComment = false;
   $scope.$watch('service.getListMovies()', function(newVal) {
     $scope.movies = newVal;
   });
@@ -14,5 +11,19 @@ angular.module("ucritic").controller("homeCtrl", function($scope, homeSvc) {
   $scope.toggleView = function(movie) {
     $scope.curMovie = homeSvc.saveMovie(movie);
     homeSvc.toggleView($scope.viewMovie);
+  }
+  $scope.displayNewComment = function(comment) {
+    if (comment === "") {
+      $scope.viewComment = false;
+    } else {
+      $scope.viewComment = true;
+    }
+  }
+  $scope.addComment = function(comment) {
+    if (comment !== "") {
+      homeSvc.addComment(comment);
+      $scope.userComment = "";
+      $scope.viewComment = false;
+    }
   }
 });

@@ -59,6 +59,39 @@
         </div>
       </section>
     </div>
-    <section class="movie-info" id="synopsis"></section>
+    <section class="movie-info" id="synopsis" ng-hide="viewMovie"></section>
+    <section class="add-comment" ng-hide="viewMovie">
+      <textarea ng-change="displayNewComment(userComment)" ng-model="userComment" type="text" placeholder="type your comment here..."></textarea>
+      <button ng-click="addComment(userComment)">+</button>
+    </section>
+    <section class="show-comment" ng-show="viewComment">
+      {{userComment}}
+    </section>
+    <section class="comments" ng-hide="viewMovie">
+      <div class="comment">
+        <p>This is a comment.</p><span>Reply</span>
+        <div class="subComment">
+          <p>This is a subcomment.</p><span>Reply</span>
+          <div class="subComment">
+            <p>This is an inner subcomment. This comment is longer than all of the rest. This should wrap around. Lets see what this does....</p><span>Reply</span>
+            <div class="subComment">
+              <p>This is an inner inner subcomment.</p><span>Reply</span>
+              <div class="subComment">
+                <p>This is an inner inner subcomment.</p><span>Reply</span>
+              </div>
+            </div>
+            <div class="subComment">
+              <p>This is a sibling comment.</p><span>Reply</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comment">
+        <p>This is a comment.</p><span>Reply</span>
+        <div class="subComment">
+          <p>This is a subcomment.</p><span>Reply</span>
+        </div>
+      </div>
+    </section>
   </div>
 </main>
