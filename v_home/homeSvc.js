@@ -55,7 +55,15 @@ angular.module("ucritic").service("homeSvc", function($http) {
   }
 
   this.addComment = function(comment) {
-    $(".comments").prepend('<div id="newComment" class="comment">' + comment + '</div>');
+    $(".comments").prepend(
+          '<div id="newComment" class="comment">' +
+          '<div class="commentInfo">' +
+          '<span class="infoLeft"><a>Profile_Name</a></span>' +
+          '<span class="infoRight"><a>Support</a> | <a>Reply</a> | <a>Minimize</a></span>' +
+          '</div><br><p>' +
+          comment +
+          '</p></div>'
+    );
   }
 
 });

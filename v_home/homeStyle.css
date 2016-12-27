@@ -252,13 +252,71 @@ main .comments {
 }
 
 main .comments .comment p {
-  width: 80%;
+  width: 97.5%;
+  font-size: 14px;
+  padding: 5px 0px 0px 0px;
 }
 
 main .comments .comment span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
+main .comments .comment .toggleComment {
+  padding: 0px 5px;
+  border: solid 1px rgba(255,255,255,0.6);
+}
+
+main .comments .subComment .commentInfo {
+  padding-right: 15px;
+}
+
+main .reply input[type=text],
+main .reply textarea {
+  background: var(--dark-gray);
+  width: 83%;
+  font-size: 16px;
+  font-family: Arial;
+  text-align: justify;
+  padding: 30px 30px 15px 30px;
+  margin-top: 15px;
+  color: white;
+  resize: none;
+  border: solid 1px var(--main);
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .reply button {
+  width: 50px;
+  position: absolute;
+  margin: 31px 22px;
+  font-size: 32px;
+  background: var(--dark-gray);
+  height: 50px;
+  color: var(--ucritic);
+  box-shadow: 5px 5px 0px var(--trans2);
+  border: solid 1px var(--main);
+}
+
+main .reply button:hover {
+  border-color: var(--ucritic);
+  cursor: pointer;
+}
+
+main .reply {
+  display: none;
+}
+
+main .comments .comment .infoRight {
   float: right;
-  padding: 20px;
-  margin-top: -36px;
+}
+
+main .comments .comment .infoLeft {
+  float: left;
+}
+
+main .comments a:hover {
+  cursor: pointer;
 }
 
 main .comment {

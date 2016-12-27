@@ -69,27 +69,143 @@
     </section>
     <section class="comments" ng-hide="viewMovie">
       <div class="comment">
-        <p>This is a comment.</p><span>Reply</span>
-        <div class="subComment">
-          <p>This is a subcomment.</p><span>Reply</span>
+        <div class="commentInfo">
+          <span class="infoLeft">
+            <a>Profile_Name</a>
+          </span>
+          <span class="infoRight">
+            <a>Support</a>
+             |
+            <a ng-click="reply($event)">Reply</a>
+             |
+            <a ng-click="minimize($event)">Minimize</a>
+          </span>
+        </div><br>
+        <div class="commentContent">
+          <p>This is a comment.</p>
+          <div class="reply">
+            <textarea type="text" placeholder="type your reply here..."></textarea>
+            <button>+</button>
+          </div>
           <div class="subComment">
-            <p>This is an inner subcomment. This comment is longer than all of the rest. This should wrap around. Lets see what this does....</p><span>Reply</span>
-            <div class="subComment">
-              <p>This is an inner inner subcomment.</p><span>Reply</span>
+            <div class="commentInfo">
+              <span class="infoLeft">
+                <a>Profile_Name</a>
+              </span>
+              <span class="infoRight">
+                <a>Support</a>
+                 |
+                <a>Reply</a>
+                 |
+                <a ng-click="minimize($event)">Minimize</a>
+              </span>
+            </div><br>
+            <div class="commentContent">
+              <p>This is a subcomment.</p>
               <div class="subComment">
-                <p>This is an inner inner subcomment.</p><span>Reply</span>
+                <div class="commentInfo">
+                  <span class="infoLeft">
+                    <a>Profile_Name</a>
+                  </span>
+                  <span class="infoRight">
+                    <a>Support</a>
+                     |
+                    <a>Reply</a>
+                     |
+                    <a ng-click="minimize($event)">Minimize</a>
+                  </span>
+                </div><br>
+                <div class="commentContent">
+                  <p>This is an inner subcomment. This comment is longer than all of the rest. This should wrap around. Lets see what this does....</p>
+                  <div class="subComment">
+                    <div class="commentInfo">
+                      <span class="infoLeft">
+                        <a>Profile_Name</a>
+                      </span>
+                      <span class="infoRight">
+                        <a>Support</a>
+                         |
+                        <a>Reply</a>
+                         |
+                        <a ng-click="minimize($event)">Minimize</a>
+                      </span>
+                    </div><br>
+                    <div class="commentContent">
+                      <p>This is an inner inner subcomment.</p>
+                      <div class="subComment">
+                        <div class="commentInfo">
+                          <span class="infoLeft">
+                            <a>Profile_Name</a>
+                          </span>
+                          <span class="infoRight">
+                            <a>Support</a>
+                             |
+                            <a>Reply</a>
+                             |
+                            <a ng-click="minimize($event)">Minimize</a>
+                          </span>
+                        </div><br>
+                        <div class="commentContent">
+                          <p>This is an inner inner subcomment.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="subComment">
+                    <div class="commentInfo">
+                      <span class="infoLeft">
+                        <a>Profile_Name</a>
+                      </span>
+                      <span class="infoRight">
+                        <a>Support</a>
+                         |
+                        <a>Reply</a>
+                         |
+                        <a ng-click="minimize($event)">Minimize</a>
+                      </span>
+                    </div><br>
+                    <div class="commentContent">
+                      <p>This is a sibling comment.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="subComment">
-              <p>This is a sibling comment.</p><span>Reply</span>
             </div>
           </div>
         </div>
       </div>
       <div class="comment">
-        <p>This is a comment.</p><span>Reply</span>
-        <div class="subComment">
-          <p>This is a subcomment.</p><span>Reply</span>
+        <div class="commentInfo">
+          <span class="infoLeft">
+            <a>Profile_Name</a>
+          </span>
+          <span class="infoRight">
+            <a>Support</a>
+             |
+            <a>Reply</a>
+             |
+            <a ng-click="minimize($event)">Minimize</a>
+          </span>
+        </div><br>
+        <div class="commentContent">
+          <p>This is a comment.</p>
+          <div class="subComment">
+            <div class="commentInfo">
+              <span class="infoLeft">
+                <a>Profile_Name</a>
+              </span>
+              <span class="infoRight">
+                <a>Support</a>
+                 |
+                <a>Reply</a>
+                 |
+                <a ng-click="minimize($event)">Minimize</a>
+              </span>
+            </div><br>
+            <div class="commentContent">
+              <p>This is a subcomment.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
