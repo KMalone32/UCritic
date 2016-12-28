@@ -55,15 +55,37 @@ angular.module("ucritic").service("homeSvc", function($http) {
   }
 
   this.addComment = function(comment) {
-    $(".comments").prepend(
-          '<div id="newComment" class="comment">' +
-          '<div class="commentInfo">' +
-          '<span class="infoLeft"><a>Profile_Name</a></span>' +
-          '<span class="infoRight"><a>Support</a> | <a>Reply</a> | <a>Minimize</a></span>' +
-          '</div><br><p>' +
-          comment +
-          '</p></div>'
-    );
+    var html =
+      '<div id="newComment" class="comment">' +
+      '<div class="commentInfo">' +
+      '<span class="infoLeft"><a id="your-profile">Profile_Name</a></span>' +
+      '<span class="infoRight"><a id="your-profile" ng-click="support($event)">Support</a> | <a ng-click="reply($event)">Reply</a> | <a ng-click="minimize($event)">Minimize</a></span>' +
+      '</div><br><div class="commentContent"><p>' +
+      comment +
+      '</p>' +
+      '<div class="reply">' +
+      '<textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>' +
+      '<button ng-click="addReply(userReply, $event)">+</button>' +
+      '</div>' +
+      '</div></div>';
+    return html;
+  }
+
+  this.addReply = function(reply) {
+    var html =
+      '<div id="newReply" class="subComment">' +
+      '<div class="commentInfo">' +
+      '<span class="infoLeft"><a id="your-profile">Profile_Name</a></span>' +
+      '<span class="infoRight"><a id="your-profile" ng-click="support($event)">Support</a> | <a ng-click="reply($event)">Reply</a> | <a ng-click="minimize($event)">Minimize</a></span>' +
+      '</div><br><div class="commentContent"><p>' +
+      reply +
+      '</p>' +
+      '<div class="reply">' +
+      '<textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>' +
+      '<button ng-click="addReply(userReply, $event)">+</button>' +
+      '</div>' +
+      '</div></div>';
+    return html;
   }
 
 });
